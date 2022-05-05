@@ -20,7 +20,7 @@ db.on('open', ()=>{
 
 // Middleware //
 // app.use(cors());
-// app.use(express.json());
+app.use(express.json());
 // const path = require('path'); 
 // const cors = require('cors'); 
 
@@ -28,6 +28,9 @@ db.on('open', ()=>{
 app.get('/', (req, res)=>{
     res.send('Back is connected')
 });
+
+// Controller(s)
+app.use('/api/collections', require('./controllers/collections')); 
 
 // Listener
 app.listen(PORT, ()=>{
