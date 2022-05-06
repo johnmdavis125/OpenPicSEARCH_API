@@ -19,10 +19,13 @@ db.on('open', ()=>{
 });
 
 // Middleware //
-// app.use(cors());
+const cors = require('cors'); 
+app.use(cors({
+    origin: "http://localhost:3000",
+    }
+));
 app.use(express.json());
 // const path = require('path'); 
-// const cors = require('cors'); 
 
 // Cxn Test
 app.get('/', (req, res)=>{
