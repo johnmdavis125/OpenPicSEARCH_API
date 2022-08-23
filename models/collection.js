@@ -3,7 +3,15 @@ const Schema = mongoose.Schema;
 
 const CollectionSchema = new Schema(
     {
-        imgURL: {type: String, require: true}
+        title: {type: String},
+        images: [{
+            imgSrc: {type: String, require: true},
+            description: {type: String},
+            photographer: {type: String},
+            portfolioURL: {type: String}, 
+            apiName: {type: String},
+            apiID: {type: String}
+            }]
     }
 )
 
